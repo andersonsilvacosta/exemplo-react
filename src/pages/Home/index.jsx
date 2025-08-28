@@ -1,19 +1,20 @@
-import './style.css'
-import Header from '../../components/Header'
-import Footer from '../../components/Footer'
+import "./style.css"
+import { Link } from "react-router-dom"
 
-function Home (){
-    return(
-          
-    <>
-<Header/>
-<Header titulo={"Pagina Sobre nós"}/>
+function Home() {
+    return (
 
-<main>
+        <>
 
-</main>
-<Footer/>     
-    </>
-  
+            <main>
+                Meu conteudo Batata
+                <Link to='/about'>
+                    <button type="button">Navegar</button>
+                </Link>
+            </main>
+
+        </>
+
     )
 }
+export default Home
