@@ -1,28 +1,73 @@
-01. Abrir o terminal
+🚀 Criar Projeto React com Vite
 
-02. Criar o projeto com Vite
-    Digite o comando abaixo no terminal:
-    npm create vite@latest nome-do-projeto
+1. Criar o Projeto
 
-03. Escolher o framework
-    Quando solicitado, selecione React usando as setas do teclado e pressione Enter.
+    Escolha o framework: React
+    Escolha o variant: JavaScript ou TypeScript
 
-04. Escolher o variant
-Escolha entre:
-JavaScript
-TypeScript
+2. Acessar a pasta do projeto
+
+3. Instalar dependências
+
+4. Iniciar o servidor de desenvolvimento
+
+🧱 Estrutura Inicial
+    Os arquivos App.css e index.css já possuem estilizações padrão.
+
+5. Criar pastas de componentes
+    Dentro da pasta src, crie:
+
+6. Criar componentes
+    Exemplo de componente simples no Header/index.jsx:
+
+7. Importar componentes no App.jsx
 
 
-05. Acessar a pasta do projeto
-cd nome-do-projeto
-
-06. Instalar as dependências
-npm install
-
-07 Iniciar o servidor de desenvolvimento
-npm run dev
-
-001 c
-002 App.CSS  E INDEX.CSS já possue estilizações 
-003 criar pastas componets FOOTER E hEADER
-004 - CRIAR  COMPONET NO INDEX 
+# instalando o router-dom:
+npm i react-router-dom
+ 
+depois ir para main.jsx e colocar o app dentro do BrowserRouter :
+ <BrowserRouter>
+      <App />
+</BrowserRouter>
+ 
+No app jsx:
+ 
+function App() {
+  return (
+    <>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/About" element={<About />} />
+      </Routes>
+    </>
+  )
+}
+ 
+Devem ter os imports de onde vai querer navegar, ex:
+ 
+import { Route, Routes } from "react-router-dom"
+import "./App.css";
+import Home from "./pages/Home";
+import About from "./pages/About";
+ 
+Criar um botão ou linkref para a navegação dentro do <Link to='o diretorio onde quer navegar'> <button> </button> </Link> :
+        <Link to='/About'>
+           <button type="button">Navegar</button>
+        </Link>
+ 
+E na outra pagina onde vai navegar:
+ 
+import { Link } from "react-router-dom";
+import "./style.css";
+ 
+function About() {
+  return (
+    <>
+    <h1>Paginas Sobre</h1>
+ 
+    <Link to='/'>Voltar</Link>
+   
+    </>
+  )
+}
